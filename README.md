@@ -1,31 +1,17 @@
-# QA Portfolio — Playwright Automation
-
-![Playwright](https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=playwright&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
-
-Portafolio profesional de automatización de pruebas con **Playwright + TypeScript**.
-Cubre pruebas **funcionales**, **E2E** y de **API** sobre sitios web reales,
+QA Portfolio — Playwright Automation
+Mostrar imagen
+Mostrar imagen
+Mostrar imagen
+Mostrar imagen
+Portafolio profesional de automatización de pruebas con Playwright + TypeScript.
+Cubre pruebas funcionales, E2E y de API sobre sitios web reales,
 con integración a CI/CD mediante GitHub Actions y gestión de casos en Jira.
 
----
+🚀 Tech Stack
+HerramientaVersiónPropósitoPlaywrightlatestAutomatización E2E y APITypeScriptlatestLenguaje principalGitHub Actions—Pipeline CI/CDJira—Gestión de casos de pruebaJSONPlaceholder—API pública para pruebas RESTDemoblaze—E-commerce de práctica
 
-## Tech Stack
-
-| Herramienta | Versión | Propósito |
-|---|---|---|
-| [Playwright](https://playwright.dev/) | latest | Automatización E2E y API |
-| TypeScript | latest | Lenguaje principal |
-| GitHub Actions | — | Pipeline CI/CD |
-| Jira | — | Gestión de casos de prueba |
-| JSONPlaceholder | — | API pública para pruebas REST |
-| Demoblaze | — | E-commerce de práctica |
-
----
-
-## Estructura del proyecto
-qa-portfolio/
+📁 Estructura del proyecto
+textqa-portfolio/
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml       # Pipeline CI/CD
@@ -44,52 +30,30 @@ qa-portfolio/
 ├── playwright.config.ts         # Configuración central
 └── README.md
 
----
+✅ Casos de prueba
+🔐 Login — demoblaze.com
+IDDescripciónTipoNavegadoresEstadoTC-001Login exitoso con credenciales válidasFuncionalChrome / Firefox✅ PassTC-002Login fallido con credenciales inválidasFuncionalChrome / Firefox✅ PassTC-003Login con campos vacíos muestra alertaFuncionalChrome / Firefox✅ Pass
+🛒 E2E — Flujo de compra — demoblaze.com
+IDDescripciónTipoNavegadoresEstadoTC-004Agregar producto al carritoE2EChrome / Firefox✅ PassTC-005Carrito muestra productos agregadosE2EChrome / Firefox✅ Pass
+🌐 API — JSONPlaceholder
+IDDescripciónMétodoEndpointEstadoTC-006Retorna lista de usuariosGET/users✅ PassTC-007Crea un recurso nuevoPOST/posts✅ PassTC-008Retorna 404 para usuario inexistenteGET/users/999✅ Pass
 
-## Casos de prueba
+📊 Resultados
+textRunning 20 tests using 2 workers
 
-### Login — demoblaze.com
+  ✓  TC-001 | Login exitoso con credenciales válidas
+  ✓  TC-002 | Login fallido con credenciales inválidas
+  ✓  TC-003 | Login con campos vacíos muestra alerta
+  ✓  TC-004 | Agregar producto al carrito
+  ✓  TC-005 | Carrito muestra productos agregados
+  ✓  TC-006 | GET /users retorna lista de usuarios
+  ✓  TC-007 | POST /posts crea un recurso nuevo
+  ✓  TC-008 | GET /users/999 retorna 404 para usuario inexistente
 
-| ID | Descripción | Tipo | Navegadores | Estado |
-|---|---|---|---|---|
-| TC-001 | Login exitoso con credenciales válidas | Funcional | Chrome / Firefox | ✅ Pass |
-| TC-002 | Login fallido con credenciales inválidas | Funcional | Chrome / Firefox | ✅ Pass |
-| TC-003 | Login con campos vacíos muestra alerta | Funcional | Chrome / Firefox | ✅ Pass |
+  20 passed (1.0m)
 
-### E2E — Flujo de compra — demoblaze.com
-
-| ID | Descripción | Tipo | Navegadores | Estado |
-|---|---|---|---|---|
-| TC-004 | Agregar producto al carrito | E2E | Chrome / Firefox | ✅ Pass |
-| TC-005 | Carrito muestra productos agregados | E2E | Chrome / Firefox | ✅ Pass |
-
-### API — JSONPlaceholder
-
-| ID | Descripción | Método | Endpoint | Estado |
-|---|---|---|---|---|
-| TC-006 | Retorna lista de usuarios | GET | /users | ✅ Pass |
-| TC-007 | Crea un recurso nuevo | POST | /posts | ✅ Pass |
-| TC-008 | Retorna 404 para usuario inexistente | GET | /users/999 | ✅ Pass |
-
----
-
-## Resultados
-Running 20 tests using 2 workers
-✓ TC-001 Login exitoso con credenciales válidas
-✓ TC-002 Login fallido con credenciales inválidas
-✓ TC-003 Login con campos vacíos muestra alerta
-✓ TC-004 Agregar producto al carrito
-✓ TC-005 Carrito muestra productos agregados
-✓ TC-006 GET /users retorna lista de usuarios
-✓ TC-007 POST /posts crea un recurso nuevo
-✓ TC-008 GET /users/999 retorna 404
-20 passed (1.0m)
-
----
-
-## Cómo ejecutar localmente
-```bash
-# 1. Clonar el repositorio
+▶️ Cómo ejecutar localmente
+bash# 1. Clonar el repositorio
 git clone https://github.com/Gaby0411199/qa-portfolio.git
 cd qa-portfolio
 
@@ -107,25 +71,15 @@ npx playwright show-report reports
 npx playwright test tests/functional
 npx playwright test tests/e2e
 npx playwright test tests/api
-```
 
----
-
-## CI/CD — GitHub Actions
-
-Cada `push` o `pull request` a `main` ejecuta automáticamente todos los tests en Chromium y Firefox.
-```yaml
-on:
+⚙️ CI/CD — GitHub Actions
+Cada push o pull request a main ejecuta automáticamente todos los tests en Chromium y Firefox.
+yamlon:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-```
+El pipeline instala dependencias, ejecuta los tests y publica el reporte HTML como artefacto descargable desde la pestaña Actions del repositorio.
 
----
-
-## Autora
-
-**Gabriela** — QA Engineer
-
-[![GitHub](https://img.shields.io/badge/GitHub-Gaby0411199-181717?style=flat&logo=github)](https://github.com/Gaby0411199)
+👩‍💻 Autora
+Gabriela — QA Engineer
